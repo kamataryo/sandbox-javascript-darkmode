@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Detect darkmode with JavaScript</p>
+    <script>
+      let mode
+      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        mode = 'light'
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark'
+      } else {
+        mode = 'unknown'
+      }
+      const message = `You are usung ${mode} mode!`
+      alert(message)
+    </script>
+  </body>
+</html>
