@@ -10,10 +10,10 @@
     <p>Detect dark mode with JavaScript.</p>
     <a href="https://github.com/kamataryo/sandbox-javascript-darkmode/blob/master/docs/index.html">code</a>
     <script>
-      let mode
-      if(!window.matchMedia) {
-        mode = 'unknown'
+      if(!window.matchMedia || window.matchMedia('(prefers-color-scheme)') === 'not all') {
+        alert('Not supported 🤔.')
       } else {
+        let mode
         if (window.matchMedia('(prefers-color-scheme: light)').matches) {
          mode = 'light'
        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -21,8 +21,8 @@
        } else {
          mode = 'unknown'
        }
+       alert(`You are using ${mode} mode!`)
       }
-      alert(`You are using ${mode} mode!`)
     </script>
   </body>
 </html>
